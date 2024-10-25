@@ -10,6 +10,7 @@
     "deps",
     "ci",
     "misc",
-    "vcs"
+    "vcs",
+    "make"
   ]
 }
