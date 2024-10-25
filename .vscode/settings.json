@@ -1,0 +1,15 @@
+{
+  "conventionalCommits.scopes": [
+    "cli",
+    "api",
+    "config",
+    "db",
+    "docs",
+    "tests",
+    "build",
+    "deps",
+    "ci",
+    "misc",
+    "vcs"
+  ]
+}
