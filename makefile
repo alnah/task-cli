@@ -23,7 +23,7 @@ run_postgres:
 	--health-cmd="pg_isready -U ${POSTGRES_USER}" \
 	--health-interval=10s \
 	--health-timeout=5s \
-	--health-retries=5 \a
+	--health-retries=5 \
 	--network=bridge \
 	postgres:17-alpine
 .PHONY: postgres
