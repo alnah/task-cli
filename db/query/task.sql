@@ -3,11 +3,6 @@ INSERT INTO task (description)
 VALUES ($1)
 RETURNING *;
 
--- name: GetTaskForUpdate :one
-SELECT * FROM task
-WHERE id = $1 LIMIT 1
-FOR NO KEY UPDATE;
-
 -- name: UpdateTaskDescription :one
 UPDATE task
 SET description = $2

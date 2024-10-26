@@ -11,7 +11,6 @@ import (
 type Querier interface {
 	CreateTask(ctx context.Context, description string) (Task, error)
 	DeleteTask(ctx context.Context, id int32) error
-	GetTaskForUpdate(ctx context.Context, id int32) (Task, error)
 	ListTasks(ctx context.Context, arg ListTasksParams) ([]Task, error)
 	ListTasksByStatus(ctx context.Context, arg ListTasksByStatusParams) ([]Task, error)
 	UpdateTaskDescription(ctx context.Context, arg UpdateTaskDescriptionParams) (Task, error)

@@ -39,26 +39,6 @@ func (q *Queries) DeleteTask(ctx context.Context, id int32) error {
 	return err
 }
 
-const getTaskForUpdate = `-- name: GetTaskForUpdate :one
-SELECT id, description, status, created_at, updated_at, deleted_at FROM task
-WHERE id = $1 LIMIT 1
-FOR NO KEY UPDATE
-`
-
-func (q *Queries) GetTaskForUpdate(ctx context.Context, id int32) (Task, error) {
-	row := q.db.QueryRowContext(ctx, getTaskForUpdate, id)
-	var i Task
-	err := row.Scan(
-		&i.ID,
-		&i.Description,
-		&i.Status,
-		&i.CreatedAt,
-		&i.UpdatedAt,
-		&i.DeletedAt,
-	)
-	return i, err
-}
-
 const listTasks = `-- name: ListTasks :many
 SELECT id, description, status, created_at, updated_at, deleted_at FROM task
 ORDER BY id

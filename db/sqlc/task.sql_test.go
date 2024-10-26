@@ -40,18 +40,6 @@ func TestDeleteTask(t *testing.T) {
 	require.Len(t, tasks, 0)
 }
 
-func TestGetTaskForUpdate(t *testing.T) {
-	t.Cleanup(func() { cleanupDatabase(t) })
-
-	expectedTask, err := testQueries.CreateTask(ctx, "do test")
-	require.NoError(t, err)
-
-	actualTask, err := testQueries.GetTaskForUpdate(ctx, expectedTask.ID)
-	require.NoError(t, err)
-
-	require.Equal(t, expectedTask, actualTask)
-}
-
 func TestListTasks(t *testing.T) {
 	t.Cleanup(func() { cleanupDatabase(t) })
 
