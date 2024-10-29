@@ -11,6 +11,7 @@
     "ci",
     "misc",
     "vcs",
-    "make"
+    "make",
+    "cmd"
   ]
 }
