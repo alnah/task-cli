@@ -1,0 +1,39 @@
+A cli app to track your tasks and manage your to-do list.
+
+USAGE
+  task-cli <command> <subcommand>
+
+CORE COMMANDS
+  help:         Display help information for the task-cli commands.
+  add:          Add a new task to your to-do list.
+  update:       Update an existing task's description.
+  delete:       Delete a task from your list.
+  mark:         Mark a task as completed.
+  list:         List all tasks in your to-do list.
+
+MARK SUBCOMMANDS
+  todo:        Mark a task as in the "to-do" state.
+  in-progress: Mark a task as currently being worked on.
+  done:        Mark a task as completed.
+
+LIST SUBCOMMANDS
+  all:         List all tasks regardless of their state.
+  todo:        List tasks that are still pending.
+  in-progress: List tasks that are currently being worked on.
+  done:        List tasks that have been completed.
+
+EXAMPLES
+  task-cli add "buy groceries"
+
+  task-cli update 1 "buy groceries and cook dinner"
+
+  task-cli delete 1
+
+  task-cli mark 1 todo
+  task-cli mark 1 in-progress
+  task-cli mark 1 done
+
+  task-cli list all
+  task-cli list done
+  task-cli list todo
+  task-cli list in-progress
