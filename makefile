@@ -71,3 +71,7 @@ sqlc:
 test:
 	go test -v -cover ./...
 .PHONY: test
+
+build:
+	cd cmd && go build -o task-cli && mv task-cli ./../ && cd ./../
+.PHONY: build
