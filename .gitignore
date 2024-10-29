@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/go,windows,macos,linux,visualstudiocode,jetbrains,sublimetext,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=go,windows,macos,linux,visualstudiocode,jetbrains,sublimetext,vim
 
+### Cli ###
+task-cli
+
 ### Env ###
 *.env
 
