@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestGenerateDSN(t *testing.T) {
+func TestGenerateDatasource(t *testing.T) {
 	t.Parallel()
 
 	testCases := []struct {
@@ -140,7 +140,7 @@ func TestGenerateDSN(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			gotDsn, err := GenerateDSN(tc.params)
+			gotDsn, err := GenerateDatasource(tc.params)
 			if err != nil {
 				if tc.wantErr != nil {
 					require.EqualError(t, err, tc.wantErr.Error())

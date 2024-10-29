@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-const requiredFields = "user, password, host, port, dbName"
+const requiredFields = "User, Password, Host, Port, DBName"
 
 var (
 	ErrUserLength     = fmt.Errorf("user must be 64 characters max")
@@ -26,8 +26,8 @@ type GenerateDSNParams struct {
 	DBName   string
 }
 
-// GenerateDSN constructs a Data Source Name (DSN) for PostgreSQL connection.
-func GenerateDSN(params GenerateDSNParams) (string, error) {
+// GenerateDatasource constructs a Data Source Name for a PostgreSQL connection.
+func GenerateDatasource(params GenerateDSNParams) (string, error) {
 	requiredFields := reflect.ValueOf(params)
 	for i := 0; i < requiredFields.NumField(); i++ {
 		if requiredFields.Field(i).String() == "" {
